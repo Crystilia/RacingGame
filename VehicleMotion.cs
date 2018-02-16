@@ -81,8 +81,8 @@ public class VehicleMotion : MonoBehaviour {
         float rotationTorque = input.TurnInput - rb.angularVelocity.y;
         rb.AddRelativeTorque(0f, rotationTorque, 0f, ForceMode.VelocityChange);
         float sideSpeed = Vector3.Dot(rb.velocity, transform.right);
-        Vector3 sideFriction = transform.right * (sideSpeed / Time.deltaTime);
-        //rb.AddForce(sideFriction, ForceMode.Acceleration);
+        Vector3 sideForce = transform.right * (sideSpeed / Time.deltaTime);
+        //rb.AddForce(sideForce, ForceMode.Acceleration);
 
         if (input.thrustInput <= 0f)
             rb.velocity *= VelocitySlowingFactor;
@@ -93,7 +93,21 @@ public class VehicleMotion : MonoBehaviour {
             rb.velocity *= velocityBrakingFactor;
         }
 
-        float propulsion = thrust * input.thrustInput - drag * Mathf.Clamp(speed, 0f, terminalVelocity);
+        float propulsion = 0f;
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (input.TurnInput > 0)
+            {
+                propulsion = ((thrust * input.thrustInput) + (thrust * input.TurnInput)) - drag * Mathf.Clamp(speed, 0f, terminalVelocity);
+                rb.AddForce(transform.forward * propulsion, ForceMode.Acceleration);
+            }
+            else if (input.TurnInput < 0)
+            {
+                propulsion = ((thrust * input.thrustInput) - (thrust * input.TurnInput)) - drag * Mathf.Clamp(speed, 0f, terminalVelocity);
+                rb.AddForce(transform.forward * propulsion, ForceMode.Acceleration);
+            }
+        }
+        propulsion = (thrust * input.thrustInput) - drag * Mathf.Clamp(speed, 0f, terminalVelocity);
         rb.AddForce(transform.forward * propulsion, ForceMode.Acceleration);
     }
 
