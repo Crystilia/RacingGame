@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/ProtoType.unity
-    guid: 12fe07b64000d6d49aa6c774ba82803c
-  - enabled: 1
-    path: Assets/SandBox.unity
+    path: Assets/Scenes/SandBox.unity
     guid: 257cbd3a3810fc64c8be17e7ca27b450
+  - enabled: 0
+    path: Assets/Scenes/Team.unity
+    guid: 924104ffe16515543a03eef800232f2a
+  - enabled: 0
+    path: Assets/Scenes/Loading.unity
+    guid: ad2f66f0be7cbac4283e0c101a8473ac
+  - enabled: 1
+    path: Assets/Scenes/Chara.unity
+    guid: 90d8fda49ae3b11408d739142c3ac1dd
+  - enabled: 1
+    path: Assets/Scenes/ProtoType.unity
+    guid: 12fe07b64000d6d49aa6c774ba82803c

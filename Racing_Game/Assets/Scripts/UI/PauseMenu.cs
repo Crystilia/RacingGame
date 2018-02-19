@@ -33,6 +33,6 @@ public class PauseMenu : MonoBehaviour
     public void MenuButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Chara");
     }
 }
