@@ -33,6 +33,8 @@ public class HoverMotor01 : MonoBehaviour {
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, target, 60.0f);
         }
         //Stabalize();
+
+		Speedometer.ShowSpeed(crb.velocity.magnitude * 21, 0, 100);
     }
 
     private void FixedUpdate()
