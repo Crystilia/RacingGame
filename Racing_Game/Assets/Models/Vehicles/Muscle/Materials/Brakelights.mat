@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MuscleBody
+  m_Name: Brakelights
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 682bdd9c4c3ab8144a821036fb728e22, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5a49b07e69e5aa04fb0d2f8a560d50c4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -35,15 +35,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 795014b23820b6d418161e8c4cb07f4d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cd49fdb9ca7e9354b905c251e33172d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 371a8ce398e30b54aad99d559cf1a7a5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 0f4d7d1ea56330849909c8b2b1121bfc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 213e9eef3b50d9e4eb4852b58221c6c2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -73,4 +73,4 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

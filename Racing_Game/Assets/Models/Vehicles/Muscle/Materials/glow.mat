@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MuscleBody
+  m_Name: glow
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 682bdd9c4c3ab8144a821036fb728e22, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1229ddf100a76654697fb2fe2d307836, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -35,15 +35,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c83d2c42539b7ef4cb412bf616dd4409, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cd49fdb9ca7e9354b905c251e33172d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: fb9216935d58d8b4f95097e9ebcb9a1f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 0f4d7d1ea56330849909c8b2b1121bfc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1ba91483cd8928c47b4300f6abdaebcf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -73,4 +73,4 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
