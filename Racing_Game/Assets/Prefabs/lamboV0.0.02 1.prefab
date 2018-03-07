@@ -68,8 +68,8 @@ GameObject:
   - component: {fileID: 4701855845080546}
   - component: {fileID: 33641173109145222}
   - component: {fileID: 23652152279746386}
-  - component: {fileID: 54786440847121382}
   - component: {fileID: 65249484882456786}
+  - component: {fileID: 54786440847121382}
   - component: {fileID: 114254346838147260}
   - component: {fileID: 114313819926083536}
   m_Layer: 0
@@ -324,7 +324,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65249484882456786
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -468,8 +468,8 @@ MonoBehaviour:
     i: 0.05
     d: 1
     result: 0
-  hoverHeight: 1
-  hoverHeightMax: 5
+  hoverHeight: 0.5
+  hoverHeightMax: 1
   hoverForce: 20
   speed: 0
   thrust: 5
