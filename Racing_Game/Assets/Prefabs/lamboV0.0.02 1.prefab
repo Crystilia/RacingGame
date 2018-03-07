@@ -468,12 +468,12 @@ MonoBehaviour:
     i: 0.05
     d: 1
     result: 0
-  hoverHeight: 0.5
-  hoverHeightMax: 1
+  hoverHeight: 2
+  hoverHeightMax: 4
   hoverForce: 20
   speed: 0
-  thrust: 5
-  terminalVelocity: 40
+  thrust: 10
+  terminalVelocity: 60
   VelocitySlowingFactor: 0.99
   velocityBrakingFactor: 0.95
   drift: 10
