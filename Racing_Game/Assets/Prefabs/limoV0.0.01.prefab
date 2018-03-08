@@ -700,16 +700,16 @@ MonoBehaviour:
     i: 0.05
     d: 1
     result: 0
-  hoverHeight: 0.5
-  hoverHeightMax: 1
+  hoverHeight: 1
+  hoverHeightMax: 2
   hoverForce: 20
   speed: 0
-  thrust: 5
-  terminalVelocity: 40
-  VelocitySlowingFactor: 0.99
+  thrust: 10
+  terminalVelocity: 80
+  VelocitySlowingFactor: 1
   velocityBrakingFactor: 0.95
-  drift: 4
-  hoverGrav: 20
+  drift: 25
+  hoverGrav: 1
   fallGrav: 30
 --- !u!114 &114880414833484194
 MonoBehaviour:

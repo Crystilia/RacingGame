@@ -140,7 +140,7 @@ public class Alpha_HoverMotor : MonoBehaviour {
     {
         //turning
         float rotoTorque = input.TurnInput - rb.angularVelocity.y;
-        print(input.TurnInput);
+        //print(input.TurnInput);
         rb.AddTorque(transform.up * rotoTorque * 10f, ForceMode.Acceleration);
 
         if(input.TurnInput == 0 && rb.rotation.eulerAngles.x > 90|| rb.rotation.eulerAngles.z > 90)

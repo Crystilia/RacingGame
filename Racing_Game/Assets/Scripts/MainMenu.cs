@@ -13,8 +13,8 @@ public class MainMenu : MonoBehaviour {
         }
 
 
-        public void StartBtn(int sceneIndex)
+        public void StartBtn(string scene)
         {
-        SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadScene(scene);
         }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Pickup
   - LapTrigger
   - checkTrigger
+  - Vehicle
   layers:
   - Default
   - TransparentFX
