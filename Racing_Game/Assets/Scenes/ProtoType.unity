@@ -1493,7 +1493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &800250292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,7 +1595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
+  m_AnchoredPosition: {x: -508, y: -246}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &828193961
@@ -2177,6 +2177,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de25b8a50f300fe40a157a05148f2cf9, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &1124620507 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1124620506}
 --- !u!1001 &1165002081
 Prefab:
   m_ObjectHideFlags: 0
@@ -2415,7 +2419,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1255158200}
-  - {fileID: 1947850181}
+  - {fileID: 1124620507}
   - {fileID: 187045113}
   - {fileID: 1799618913}
   m_Father: {fileID: 0}
@@ -3809,10 +3813,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1947850181 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: de25b8a50f300fe40a157a05148f2cf9, type: 3}
-  m_PrefabInternal: {fileID: 1124620506}
 --- !u!1001 &1978420220
 Prefab:
   m_ObjectHideFlags: 0

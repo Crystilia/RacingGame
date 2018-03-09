@@ -470,9 +470,9 @@ MonoBehaviour:
     result: 0
   hoverHeight: 2
   hoverHeightMax: 4
-  hoverForce: 20
+  hoverForce: 1
   speed: 0
-  thrust: 10
+  thrust: 35
   terminalVelocity: 60
   VelocitySlowingFactor: 0.99
   velocityBrakingFactor: 0.95

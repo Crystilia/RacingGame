@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterSelector : MonoBehaviour {
 
     public GameObject[] vehicleList;
+    private Animator animator;
     private new Camera camera;
     private int index = 0;
     Vector3 targetDir;
@@ -15,17 +16,24 @@ public class CharacterSelector : MonoBehaviour {
     void Start () {
         vehicleList = new GameObject[transform.childCount];
         camera = GameObject.Find("VehicleSelectCam").GetComponent<Camera>();
-
+        animator = GameObject.Find("Character1").GetComponent<Animator>();
         for (int i = 0; i < transform.childCount; i++)
         {
             vehicleList[i] = transform.GetChild(i).gameObject;
         }
     }
 
+    IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Testing Zone");
+    }
+
     public void Confirm()
     {
+        animator.SetTrigger("Selected");
         PlayerPrefs.SetInt("VehicleSelected", index);
-        SceneManager.LoadScene("Testing Zone");
+        StartCoroutine(LoadScene());
     }
 
     public void LeftArrow()
