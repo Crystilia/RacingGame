@@ -1020,7 +1020,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 198739909863874202, guid: 42431fe5456371c48b6ee6ca62d5a6ec,
+=======
+    - target: {fileID: 1251505413282072, guid: 6ace262d46c1440439739122edd7d11a, type: 2}
+      propertyPath: m_Name
+      value: truckV0.0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 198343166976095340, guid: 6ace262d46c1440439739122edd7d11a,
+>>>>>>> 61dbd8838b05119a9f6a3b7ac39e56ff742d4585
         type: 2}
       propertyPath: LightsModule.light
       value: 
@@ -1214,6 +1222,42 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7419a4aa077b30b478b84aa9f3e3be89, type: 3}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
+=======
+--- !u!1 &1103798240 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1839230270005930, guid: 578acf320594af44799eb5e0116365c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1264394369}
+--- !u!114 &1103798248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103798240}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e36803033d95c45b28b847c228feb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pid:
+    p: 0.1
+    i: 0.001
+    d: 1.25
+    result: 0.20141333
+  hoverHeight: 2
+  hoverHeightMax: 4
+  hoverForce: 35
+  speed: 0
+  thrust: 25
+  turnForce: 10
+  terminalVelocity: 80
+  VelocitySlowingFactor: 1
+  velocityBrakingFactor: 0.95
+  drift: 5
+  hoverGrav: 20
+  fallGrav: 30
+>>>>>>> 61dbd8838b05119a9f6a3b7ac39e56ff742d4585
 --- !u!4 &1111239267 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4179514993843240, guid: 233c015a18cd43f4a85b59bdf76d410b,
@@ -1570,6 +1614,35 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 224959720968058082, guid: 578acf320594af44799eb5e0116365c5,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806974261937270, guid: 578acf320594af44799eb5e0116365c5, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622699165175724, guid: 578acf320594af44799eb5e0116365c5, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279227558292082, guid: 578acf320594af44799eb5e0116365c5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806838425354862, guid: 578acf320594af44799eb5e0116365c5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839230270005930, guid: 578acf320594af44799eb5e0116365c5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> 61dbd8838b05119a9f6a3b7ac39e56ff742d4585
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 233c015a18cd43f4a85b59bdf76d410b, type: 2}
   m_IsPrefabParent: 0
@@ -2357,11 +2430,14 @@ Prefab:
       propertyPath: drift
       value: 25
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114614359436722908, guid: 9830a65b3ce0a7f46b96c0aa0a225e7a,
         type: 2}
       propertyPath: hoverGrav
       value: 15
       objectReference: {fileID: 0}
+=======
+>>>>>>> 61dbd8838b05119a9f6a3b7ac39e56ff742d4585
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9830a65b3ce0a7f46b96c0aa0a225e7a, type: 2}
   m_IsPrefabParent: 0
