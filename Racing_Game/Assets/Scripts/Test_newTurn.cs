@@ -113,18 +113,26 @@ public class Test_newTurn : MonoBehaviour {
     void Drive()
     {
         //turning
-        float rotoTorque = input.TurnInput - rb.angularVelocity.y;
-
-        rb.AddTorque(transform.up * rotoTorque * turnForce, ForceMode.Acceleration);
-
-        if (input.TurnInput == 0 && Vector3.Dot(transform.up, Vector3.down) >= 0.5f || Vector3.Dot(transform.up, Vector3.down) >= -0.5f)
+        //float rotoTorque = input.TurnInput - rb.angularVelocity.y;
+        float rotoTorque = input.TurnInput;
+        //rb.AddTorque(transform.up * rotoTorque * turnForce, ForceMode.Acceleration);
+        print(rb.angularVelocity.y);
+        if ( Vector3.Dot(transform.up, Vector3.down) < 0.5f || Vector3.Dot(transform.up, Vector3.down) < -0.5f)
         {
-            rb.constraints = RigidbodyConstraints.FreezeRotationY;
+            rb.AddTorque(transform.up * (rotoTorque - rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
         }
-        else
+        else if( Vector3.Dot(transform.up, Vector3.down) >= 0.5f || Vector3.Dot(transform.up, Vector3.down) >= -0.5f)
         {
-            rb.constraints = RigidbodyConstraints.None;
+            rb.AddTorque(transform.up * (rotoTorque + rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
         }
+        //if (input.TurnInput == 0 && Vector3.Dot(transform.up, Vector3.down) >= 0.5f || Vector3.Dot(transform.up, Vector3.down) >= -0.5f)
+        //{
+        //    rb.constraints = RigidbodyConstraints.FreezeRotationY;
+        //}
+        //else
+        //{
+        //    rb.constraints = RigidbodyConstraints.None;
+        //}
         if (input.TurnInput == 0f)
             rb.angularVelocity *= VelocitySlowingFactor;
         if (input.thrustInput <= 0f)
@@ -175,13 +183,13 @@ public class Test_newTurn : MonoBehaviour {
 
             rb.AddForce(hforce, ForceMode.Acceleration);
             rb.AddForce(gravity, ForceMode.Acceleration);
-            rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 1.5f));
+            rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 10f));
         }
         else
         {
             gravity = -Vector3.up * fallGrav;//create gravity
             rb.AddForce(gravity, ForceMode.Acceleration);//apply gravity
-            rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 1.5f));//Stabalize
+            //rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 10f));//Stabalize
         }
     }
 }

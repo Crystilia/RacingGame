@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class OnLoad : MonoBehaviour {
     public GameObject[] vehicleList;
+    public FollowCam followcam;
 
     // Use this for initialization
     void Start () {
+        followcam = GameObject.Find("FollowCam").GetComponent<FollowCam>();
         vehicleList = new GameObject[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -23,6 +25,10 @@ public class OnLoad : MonoBehaviour {
                     {
                         g.SetActive(false);
                     }
+                    else
+                    {
+                        followcam.target = g.transform;
+                    }
                 }
                 break;
             case 2:
@@ -33,6 +39,11 @@ public class OnLoad : MonoBehaviour {
                     {
                         g.SetActive(false);
                     }
+                    else
+                    {
+                        followcam.target = g.transform;
+                    }
+
                 }
                 break;
             case 3:
@@ -43,6 +54,10 @@ public class OnLoad : MonoBehaviour {
                     {
                         g.SetActive(false);
                     }
+                    else
+                    {
+                        followcam.target = g.transform;
+                    }
                 }
                 break;
             case 0:
@@ -52,6 +67,10 @@ public class OnLoad : MonoBehaviour {
                     if (!g.name.Equals("muscleV0.0.02"))
                     {
                         g.SetActive(false);
+                    }
+                    else
+                    {
+                        followcam.target = g.transform;
                     }
                 }
                 break;
