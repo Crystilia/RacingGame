@@ -1436,6 +1436,7 @@ GameObject:
   - component: {fileID: 1231663667}
   - component: {fileID: 1231663666}
   - component: {fileID: 1231663665}
+  - component: {fileID: 1231663671}
   m_Layer: 0
   m_Name: FollowCam
   m_TagString: Untagged
@@ -1531,6 +1532,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1231663671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1231663664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: d307a0d512bf79a4d87a72c8e025e644, type: 2}
 --- !u!1001 &1264394369
 Prefab:
   m_ObjectHideFlags: 0
@@ -2668,7 +2681,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 8ac29bf00cd40fa49bc7c1bcab7967ab, type: 2}
     - target: {fileID: 100000, guid: 43e505d4a06c1b940b9c98faa8333740, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43e505d4a06c1b940b9c98faa8333740, type: 3}
