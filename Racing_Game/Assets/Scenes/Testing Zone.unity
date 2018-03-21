@@ -265,6 +265,11 @@ MonoBehaviour:
   MinBox: {fileID: 1834742869}
   SecBox: {fileID: 323213076}
   MilliBox: {fileID: 797340947}
+--- !u!1 &177928759 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1049432249969928, guid: 42431fe5456371c48b6ee6ca62d5a6ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 974693839}
 --- !u!1001 &222310003
 Prefab:
   m_ObjectHideFlags: 0
@@ -1905,7 +1910,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1225052915}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3278973, y: 0.32789758, z: 0.32789758}
   m_Children: []
@@ -1914,9 +1919,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.837658}
+  m_AnchoredPosition: {x: 0, y: -0.2962799}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.49999997, y: 0.95860845}
+  m_Pivot: {x: 0.50000024, y: 0.86299604}
 --- !u!114 &1225052917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,6 +1933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c12c6a5739c5184285f10b095d0eb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  car: {fileID: 177928759}
 --- !u!114 &1225052918
 MonoBehaviour:
   m_ObjectHideFlags: 0
