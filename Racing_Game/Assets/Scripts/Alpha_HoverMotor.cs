@@ -87,12 +87,12 @@ public class Alpha_HoverMotor : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        
-	}
+        speed = Vector3.Dot(rb.velocity, transform.forward);
+    }
 
     private void FixedUpdate()
     {
-        speed = Vector3.Dot(rb.velocity, transform.forward);
+        //speed = Vector3.Dot(rb.velocity, transform.forward);
         DoHover();
         Drive();
     }
