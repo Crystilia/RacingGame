@@ -106,6 +106,7 @@ public class Test_newTurn : MonoBehaviour {
     private void FixedUpdate()
     {
         speed = Vector3.Dot(rb.velocity, transform.forward);
+        Speedometer.ShowSpeed(rb.velocity.magnitude, 0, 100);
         DoHover();
         Drive();
     }
