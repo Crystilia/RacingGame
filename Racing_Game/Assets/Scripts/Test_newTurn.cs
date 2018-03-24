@@ -106,6 +106,7 @@ public class Test_newTurn : MonoBehaviour {
     private void FixedUpdate()
     {
         speed = Vector3.Dot(rb.velocity, transform.forward);
+        Speedometer.ShowSpeed(rb.velocity.magnitude, 0, 100);
         DoHover();
         Drive();
     }
@@ -116,7 +117,7 @@ public class Test_newTurn : MonoBehaviour {
         //float rotoTorque = input.TurnInput - rb.angularVelocity.y;
         float rotoTorque = input.TurnInput;
         //rb.AddTorque(transform.up * rotoTorque * turnForce, ForceMode.Acceleration);
-        print(rb.angularVelocity.y);
+        //print(rb.angularVelocity.y);
         if ( Vector3.Dot(transform.up, Vector3.down) < 0.5f || Vector3.Dot(transform.up, Vector3.down) < -0.5f)
         {
             rb.AddTorque(transform.up * (rotoTorque - rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);

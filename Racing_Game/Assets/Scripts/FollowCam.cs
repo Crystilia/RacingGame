@@ -12,7 +12,7 @@ public class FollowCam : MonoBehaviour
         public bool followBehind = true;
         public float rotationDamping = 10.0f;
 
-    void Update()
+    void FixedUpdate()
     {
         if (target != null)
         {
