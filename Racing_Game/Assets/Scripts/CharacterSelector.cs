@@ -147,7 +147,7 @@ public class CharacterSelector : MonoBehaviour {
 
     public void Confirm()
     {
-        PlayerPrefs.SetInt("VehicleSelected", index);
+        PlayerPrefs.SetInt("VehicleSelected", index);//Here<------playerprefs vehicle set to index
         PlaySelectAnim();
         StartCoroutine(LoadScene());
     }

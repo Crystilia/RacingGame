@@ -15,7 +15,7 @@ public class OnLoad : MonoBehaviour {
             vehicleList[i] = transform.GetChild(i).gameObject;
         }
 
-        switch (PlayerPrefs.GetInt("VehicleSelected"))
+        switch (PlayerPrefs.GetInt("VehicleSelected"))//<--Player prefes used here.
         {
             case 1:
                 print("1");
