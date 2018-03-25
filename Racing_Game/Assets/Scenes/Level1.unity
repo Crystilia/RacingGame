@@ -699,6 +699,7 @@ Camera:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &442334763
 =======
 --- !u!1 &462236519
@@ -812,6 +813,8 @@ Transform:
 =======
 >>>>>>> 5232fd3e48fe200d83b1e23d9b652afa36274a03
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
@@ -946,6 +949,7 @@ Transform:
   m_Father: {fileID: 769249615}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1119,6 +1123,8 @@ Transform:
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
+=======
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 --- !u!1 &696064018
 >>>>>>> 5232fd3e48fe200d83b1e23d9b652afa36274a03
 GameObject:
@@ -1196,6 +1202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: d307a0d512bf79a4d87a72c8e025e644, type: 2}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &769249613
@@ -1487,6 +1494,8 @@ MonoBehaviour:
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
+=======
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 --- !u!1 &769249613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1574,7 @@ Transform:
   - {fileID: 246686783}
   - {fileID: 1343973401}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1738,6 +1748,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6c718b161ea5734092505738d17f927, type: 3}
   m_IsPrefabParent: 0
+=======
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2112,6 +2126,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215630304
@@ -2224,12 +2239,17 @@ MeshFilter:
 =======
 =======
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
+=======
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258286412
 GameObject:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
+=======
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
@@ -2252,6 +2272,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1258286412}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 143.4, y: 9.5, z: 19.2}
@@ -2362,6 +2383,14 @@ Transform:
   m_RootOrder: 25
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
+  m_LocalPosition: {x: 143.4, y: 9.5, z: 19.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 769249615}
+  m_RootOrder: 25
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
+=======
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 143.4, y: 9.5, z: 19.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2584,6 +2613,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &1358793150
 Prefab:
   m_ObjectHideFlags: 0
@@ -2703,6 +2733,8 @@ Transform:
   m_Father: {fileID: 616541389}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
@@ -6194,6 +6226,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Father: {fileID: 0}
   m_RootOrder: 5
 =======
@@ -6269,6 +6302,9 @@ Transform:
   m_LocalScale: {x: 1.9531116, y: 8.590839, z: 0.20696512}
   m_Children: []
   m_Father: {fileID: 616541389}
+=======
+  m_Father: {fileID: 0}
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
   m_Father: {fileID: 0}
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
@@ -6472,6 +6508,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Father: {fileID: 0}
   m_RootOrder: 4
 =======
@@ -6482,6 +6519,10 @@ Transform:
   m_Father: {fileID: 616541389}
   m_RootOrder: 1
 >>>>>>> 5232fd3e48fe200d83b1e23d9b652afa36274a03
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -10064,6 +10105,7 @@ CanvasRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -10092,6 +10134,8 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2075226272
+=======
+>>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
 >>>>>>> parent of 5232fd3... Buildings, street lights, billboards.
 =======
