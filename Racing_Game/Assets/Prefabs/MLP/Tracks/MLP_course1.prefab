@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 95411703314462138}
   - component: {fileID: 64801333274084586}
   m_Layer: 0
-  m_Name: Track1 Prefab 1
+  m_Name: MLP_course1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
