@@ -15,7 +15,8 @@ public class CharacterSelector : MonoBehaviour {
     Vector3 theta;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         camera = GameObject.Find("VehicleSelectCam").GetComponent<Camera>();
         animators = new Animator[GameObject.Find("CharacterList").transform.childCount];
         vehicleList = new GameObject[transform.childCount];
@@ -27,31 +28,12 @@ public class CharacterSelector : MonoBehaviour {
             vehicleList[i].transform.GetChild(0).GetComponent<Animator>().gameObject.SetActive(false);
             vehicleList[i].transform.GetChild(1).GetComponent<Animator>().gameObject.SetActive(true);
         }
-
-        //foreach (GameObject g in vehicleList)
-        //{
-        //    vehicleList[index].transform.GetChild(0).GetComponent<Animator>().gameObject.SetActive(false);
-        //    vehicleList[index].transform.GetChild(0).GetComponent<Animator>().gameObject.SetActive(false);
-        //}
-        //populate animators and set female to not active
-        //for (int i = 0; i < GameObject.Find("CharacterList").transform.childCount; i++)
-        //{
-        //    animators[i] = GameObject.Find("CharacterList").transform.GetChild(i).GetComponent<Animator>();
-        //    if (i % 2 == 0)
-        //    {
-        //        animators[i].gameObject.SetActive(false);
-        //    }
-        //    else
-        //    {
-        //        animators[i].gameObject.SetActive(true);
-        //    }
-        //}
     }
 
     IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(1.25f);
-        SceneManager.LoadScene("Testing Zone");
+        SceneManager.LoadScene("Level1");
     }
 
     public void PlaySelectAnim()
@@ -59,33 +41,11 @@ public class CharacterSelector : MonoBehaviour {
         if (male)
         {
             vehicleList[index].transform.GetChild(1).GetComponent<Animator>().SetTrigger("Selected");
-            //animators[index + 1].SetTrigger("Selected");
         }
         else
         {
             vehicleList[index].transform.GetChild(0).GetComponent<Animator>().SetTrigger("Selected");
         }
-        //switch (index)
-        //{
-        //    case 0:
-        //        if (male)
-        //        {
-        //            animators[1].SetTrigger("Selected");
-        //        }
-        //        else
-        //        {
-        //            animators[0].SetTrigger("Selected");
-        //        }
-        //        break;
-        //    case 1:
-        //        break;
-        //    case 2:
-        //        break;
-        //    case 3:
-        //        break;
-        //    case 4:
-        //        break;
-        //}
     }
 
     public void SelectGender()
@@ -110,44 +70,11 @@ public class CharacterSelector : MonoBehaviour {
                 vehicleList[i].transform.GetChild(1).GetComponent<Animator>().gameObject.SetActive(false);
             }
         }
-        
-        //if (male)
-        //{
-        //    male = !male;
-            //    for (int i = 0; i < GameObject.Find("CharacterList").transform.childCount; i++)
-            //    {
-            //        animators[i] = GameObject.Find("CharacterList").transform.GetChild(i).GetComponent<Animator>();
-            //        if (i % 2 == 0)
-            //        {
-            //            animators[i].gameObject.SetActive(true);
-            //        }
-            //        else
-            //        {
-            //            animators[i].gameObject.SetActive(false);
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    male = !male;
-            //    for (int i = 0; i < GameObject.Find("CharacterList").transform.childCount; i++)
-            //    {
-            //        animators[i] = GameObject.Find("CharacterList").transform.GetChild(i).GetComponent<Animator>();
-            //        if (i % 2 == 0)
-            //        {
-            //            animators[i].gameObject.SetActive(false);
-            //        }
-            //        else
-            //        {
-            //            animators[i].gameObject.SetActive(true);
-            //        }
-            //    }
-            //}
-        }
+    }
 
     public void Confirm()
     {
-        PlayerPrefs.SetInt("VehicleSelected", index);//Here<------playerprefs vehicle set to index
+        PlayerPrefs.SetInt("VehicleSelected", index);
         PlaySelectAnim();
         StartCoroutine(LoadScene());
     }

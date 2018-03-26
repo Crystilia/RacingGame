@@ -5,7 +5,7 @@ using UnityEngine;
 public class Speedometer : MonoBehaviour {
 
     static float minAngle = 290.0f;
-    static float maxAngle = 90.0f;
+    static float maxAngle = 160.0f;
     static Speedometer Speeder;
     public GameObject car;
 	
@@ -16,7 +16,7 @@ public class Speedometer : MonoBehaviour {
 
     private void Update()
     {
-        ShowSpeed(car.GetComponent<Rigidbody>().velocity.magnitude, 0f, car.GetComponent<Test_newTurn>().terminalVelocity);
+        //ShowSpeed(car.GetComponent<Rigidbody>().velocity.magnitude, 0f, car.GetComponent<MLP_HoverMotor>().terminalVelocity);
     }
 
     public static void ShowSpeed(float speed, float min, float max)

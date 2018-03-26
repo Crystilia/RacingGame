@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OnLoad : MonoBehaviour {
     public GameObject[] vehicleList;
+    private RacingAI ai;
+    private MLP_HoverMotor motor;
     public FollowCam followcam;
 
     // Use this for initialization
@@ -15,18 +17,26 @@ public class OnLoad : MonoBehaviour {
             vehicleList[i] = transform.GetChild(i).gameObject;
         }
 
-        switch (PlayerPrefs.GetInt("VehicleSelected"))//<--Player prefes used here.
+        switch (PlayerPrefs.GetInt("VehicleSelected"))
         {
             case 1:
                 print("1");
                 foreach (GameObject g in vehicleList)
                 {
-                    if (!g.name.Equals("truckV0.0.03"))
+                    if (!g.name.Equals("truckFinal"))
                     {
-                        g.SetActive(false);
+                        ai = g.GetComponent<RacingAI>();
+                        motor = g.GetComponent<MLP_HoverMotor>();
+                        ai.enabled = true;
+                        motor.enabled = false;
+                        //g.SetActive(false);
                     }
                     else
                     {
+                        ai = g.GetComponent<RacingAI>();
+                        motor = g.GetComponent<MLP_HoverMotor>();
+                        ai.enabled = false;
+                        motor.enabled = true;
                         followcam.target = g.transform;
                     }
                 }
@@ -35,27 +45,42 @@ public class OnLoad : MonoBehaviour {
                 print("2");
                 foreach (GameObject g in vehicleList)
                 {
-                    if (!g.name.Equals("sportsV0.0.02"))
+                    if (!g.name.Equals("sportFinal"))
                     {
-                        g.SetActive(false);
+                        ai = g.GetComponent<RacingAI>();
+                        motor = g.GetComponent<MLP_HoverMotor>();
+                        ai.enabled = true;
+                        motor.enabled = false;
+                        //g.SetActive(false);
                     }
                     else
                     {
+                        ai = g.GetComponent<RacingAI>();
+                        motor = g.GetComponent<MLP_HoverMotor>();
+                        ai.enabled = false;
+                        motor.enabled = true;
                         followcam.target = g.transform;
                     }
-
                 }
                 break;
             case 3:
                 print("3");
                 foreach(GameObject g in vehicleList)
                 {
-                    if (!g.name.Equals("limoV0.0.01"))
+                    if (!g.name.Equals("limoFinal"))
                     {
-                        g.SetActive(false);
+                        ai = g.GetComponent<RacingAI>();
+                        motor = g.GetComponent<MLP_HoverMotor>();
+                        ai.enabled = true;
+                        motor.enabled = false;
+                        //g.SetActive(false);
                     }
                     else
                     {
+                        ai = g.GetComponent<RacingAI>();
+                        motor = g.GetComponent<MLP_HoverMotor>();
+                        ai.enabled = false;
+                        motor.enabled = true;
                         followcam.target = g.transform;
                     }
                 }
@@ -64,12 +89,20 @@ public class OnLoad : MonoBehaviour {
                 print("4");
                 foreach (GameObject g in vehicleList)
                 {
-                    if (!g.name.Equals("muscleV0.0.02"))
+                    if (!g.name.Equals("muscleFinal"))
                     {
-                        g.SetActive(false);
+                        ai = g.GetComponent<RacingAI>();
+                        motor = g.GetComponent<MLP_HoverMotor>();
+                        ai.enabled = true;
+                        motor.enabled = false;
+                        //g.SetActive(false);
                     }
                     else
                     {
+                        ai = g.GetComponent<RacingAI>();
+                        motor = g.GetComponent<MLP_HoverMotor>();
+                        ai.enabled = false;
+                        //motor.enabled = true;
                         followcam.target = g.transform;
                     }
                 }
