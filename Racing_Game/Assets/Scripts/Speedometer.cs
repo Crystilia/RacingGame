@@ -22,6 +22,6 @@ public class Speedometer : MonoBehaviour {
     public static void ShowSpeed(float speed, float min, float max)
 	{
 		float ang = Mathf.Lerp(minAngle, maxAngle, Mathf.InverseLerp(min, max, speed));
-		Speeder.transform.eulerAngles = new Vector3(0,0,ang);
+		//Speeder.transform.eulerAngles = new Vector3(0,0,ang);
 	}
 }

@@ -102,7 +102,7 @@ public class OnLoad : MonoBehaviour {
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = false;
-                        //motor.enabled = true;
+                        motor.enabled = true;
                         followcam.target = g.transform;
                     }
                 }

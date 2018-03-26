@@ -93,13 +93,14 @@ public class RacingAI : MonoBehaviour {
             }
             else
             {
-                print("Node: "+currentNode);
+                //print("Node: "+currentNode);
                 currentNode++;
+                //print("Node: "+currentNode);
             }
         }
         else
         {
-            print(Vector3.Distance(transform.position, nodes[currentNode].position));
+            //print(Vector3.Distance(transform.position, nodes[currentNode].position));
         }
     }
 
@@ -145,7 +146,7 @@ public class RacingAI : MonoBehaviour {
     float CalcSteer()
     {
         Vector3 steeringVector = transform.InverseTransformPoint(nodes[currentNode].position);
-        float newSteer = steeringVector.x / steeringVector.magnitude;
+        float newSteer = steeringVector.x / steeringVector.magnitude * 2f;
         //print(newSteer);
         return newSteer;
     }
