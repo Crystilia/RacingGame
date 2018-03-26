@@ -1663,10 +1663,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c12c6a5739c5184285f10b095d0eb67, type: 3}
 --- !u!1 &1155330602 stripped
 GameObject:
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 1904562998481486, guid: 80eaef50bc5c6b240a18c1f2eeaa3702,
     type: 2}
   m_PrefabInternal: {fileID: 1915705333}
 --- !u!82 &1155330603
+=======
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1200413500}
+  - component: {fileID: 1200413499}
+  - component: {fileID: 1200413498}
+  m_Layer: 0
+  m_Name: Countdown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1200413498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1200413497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ea004319f855843ba2a954ce381076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSound: {fileID: 8300000, guid: 3f18265318b7dbd489ea55cc238d0bf4, type: 3}
+<<<<<<< HEAD
+=======
+  musicStart: {fileID: 8300000, guid: 906342c9a437be44bb64d65588f9dd67, type: 3}
+  LapTimer: {fileID: 1554309414}
+>>>>>>> e9a129566e04d7125c64ed89333891677966ff3d
+--- !u!82 &1200413499
+>>>>>>> 718b163f0fe717638a27fee22b00214769d1ffcb
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2639,7 +2675,7 @@ Prefab:
     - target: {fileID: 114363830952343416, guid: 9081a1af929ee6541a0eb6f35a091cc0,
         type: 2}
       propertyPath: pid.result
-      value: 0.12591565
+      value: 0.119850606
       objectReference: {fileID: 0}
     - target: {fileID: 114363830952343416, guid: 9081a1af929ee6541a0eb6f35a091cc0,
         type: 2}
@@ -2674,6 +2710,16 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363830952343416, guid: 9081a1af929ee6541a0eb6f35a091cc0,
+        type: 2}
+      propertyPath: terminalVelocity
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363830952343416, guid: 9081a1af929ee6541a0eb6f35a091cc0,
+        type: 2}
+      propertyPath: thrust
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9081a1af929ee6541a0eb6f35a091cc0, type: 2}
