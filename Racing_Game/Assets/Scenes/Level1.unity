@@ -1454,6 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSound: {fileID: 8300000, guid: 3f18265318b7dbd489ea55cc238d0bf4, type: 3}
+  musicStart: {fileID: 8300000, guid: 906342c9a437be44bb64d65588f9dd67, type: 3}
   LapTimer: {fileID: 1554309414}
 --- !u!82 &1200413499
 AudioSource:
