@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MLP_HoverMotor : MonoBehaviour {
+    private AudioSource source;
+    bool itsPlaying;
 
     bool start = false;
 
@@ -57,6 +59,8 @@ public class MLP_HoverMotor : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        source = GetComponent<AudioSource>();
+        itsPlaying = false;
         //instantiate input
         input = GetComponent<PlayerInput>();
         //set rigidbody
@@ -194,6 +198,7 @@ public class MLP_HoverMotor : MonoBehaviour {
         if ( Vector3.Dot(transform.up, Vector3.down) < 0.5f || Vector3.Dot(transform.up, Vector3.down) < -0.5f)
         {
             rb.AddTorque(transform.up * (rotoTorque - rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
+            
         }
         else if( Vector3.Dot(transform.up, Vector3.down) >= 0.5f || Vector3.Dot(transform.up, Vector3.down) >= -0.5f)
         {
@@ -217,6 +222,22 @@ public class MLP_HoverMotor : MonoBehaviour {
         {
             rb.velocity *= velocityBrakingFactor;
         }
+
+        if(speed >= 1 && grounded && !itsPlaying)
+        {
+            
+            source.Play();
+            itsPlaying = true;
+           
+        }
+
+        if (speed <= 1 && itsPlaying)
+        {
+            source.Stop();
+            itsPlaying = false;
+        }
+
+ 
 
         //forward
         float sideSpeed = Vector3.Dot(rb.velocity, transform.right);
@@ -266,4 +287,5 @@ public class MLP_HoverMotor : MonoBehaviour {
             //rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 10f));//Stabalize
         }
     }
+
 }

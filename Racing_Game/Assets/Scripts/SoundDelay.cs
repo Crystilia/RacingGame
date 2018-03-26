@@ -8,6 +8,7 @@ public class SoundDelay : MonoBehaviour {
     public AudioClip musicStart;
     private AudioSource source;
     public GameObject LapTimer;
+    public GameObject StartEngines;
 
     // Use this for initialization
     void Start() {
@@ -33,7 +34,7 @@ public class SoundDelay : MonoBehaviour {
     public void EndTimer()
     {
         LapTimer.SetActive(true);
-        
+        StartEngines.SetActive(false);
         
     }
 

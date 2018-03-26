@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Speedometer : MonoBehaviour {
 
-    static float minAngle = 290.0f;
-    static float maxAngle = 160.0f;
+    static float minAngle = 320.0f;
+    static float maxAngle = 90.0f;
     static Speedometer Speeder;
     public GameObject car;
 	
