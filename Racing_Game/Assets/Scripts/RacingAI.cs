@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RacingAI : MonoBehaviour {
 
+    bool start = false;
+
     public Transform path;
     private List<Transform> nodes;
     private int currentNode = 0;
@@ -75,14 +77,28 @@ public class RacingAI : MonoBehaviour {
                 nodes.Add(pathTransforms[i]);
             }
         }
+
+        StartCoroutine(DoCountdown());
     }
 
     private void FixedUpdate()
     {
         speed = Vector3.Dot(rb.velocity, transform.forward);
-        DoHover();
-        Drive();
-        CheckWaypointDistance();
+        if (start)
+        {
+            DoHover();
+            Drive();
+            CheckWaypointDistance();
+        }
+        //DoHover();
+        //Drive();
+        //CheckWaypointDistance();
+    }
+
+    IEnumerator DoCountdown()
+    {
+        yield return new WaitForSeconds(4f);
+        start = true;
     }
 
     void CheckWaypointDistance()

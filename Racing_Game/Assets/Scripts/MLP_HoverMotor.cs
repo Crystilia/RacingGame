@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MLP_HoverMotor : MonoBehaviour {
+
+    bool start = false;
+
     //static input class attached to game object.
     PlayerInput input;
 
@@ -76,6 +79,9 @@ public class MLP_HoverMotor : MonoBehaviour {
                 nodes.Add(pathTransforms[i]);
             }
         }
+
+        StartCoroutine(DoCountdown());
+
     }
 
     //for debuging in scene view
@@ -127,10 +133,23 @@ public class MLP_HoverMotor : MonoBehaviour {
     private void FixedUpdate()
     {
         speed = Vector3.Dot(rb.velocity, transform.forward);
-        Speedometer.ShowSpeed(rb.velocity.magnitude, 0, 100);
-        DoHover();
-        Drive();
-        CheckWaypointDistance();
+        if (start)
+        {
+            Speedometer.ShowSpeed(rb.velocity.magnitude, 0, 100);
+            DoHover();
+            Drive();
+            CheckWaypointDistance();
+        }
+        //Speedometer.ShowSpeed(rb.velocity.magnitude, 0, 100);
+        //DoHover();
+        //Drive();
+        //CheckWaypointDistance();
+    }
+
+    IEnumerator DoCountdown()
+    {
+        yield return new WaitForSeconds(4f);
+        start = true;
     }
 
     void CheckWaypointDistance()
