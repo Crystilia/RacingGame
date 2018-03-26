@@ -147,7 +147,7 @@ MonoBehaviour:
     p: 0.2
     i: 0.05
     d: 1
-    result: 0.91434425
+    result: 0.101500005
   hoverHeight: 0.5
   hoverHeightMax: 4
   hoverForce: 100
@@ -155,24 +155,24 @@ MonoBehaviour:
   thrust: 25
   turnForce: 25
   terminalVelocity: 60
-  VelocitySlowingFactor: 0.99
+  VelocitySlowingFactor: 1
   velocityBrakingFactor: 0.95
   drift: 5
   hoverGrav: 100
-  fallGrav: 30
+  fallGrav: 35
 --- !u!114 &114951516893704154
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1189900880033486}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99c36c6ed509abd4f82b7512a2c44462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 0}
-  maxSteerAngle: 60
+  maxSteerAngle: 75
   pid:
     p: 0.2
     i: 0.05
@@ -182,11 +182,11 @@ MonoBehaviour:
   hoverHeightMax: 4
   hoverForce: 100
   speed: 0
-  thrust: 70
-  turnForce: 25
-  terminalVelocity: 80
+  thrust: 50
+  turnForce: 30
+  terminalVelocity: 85
   VelocitySlowingFactor: 0.99
   velocityBrakingFactor: 0.95
   drift: 5
   hoverGrav: 100
-  fallGrav: 35
+  fallGrav: 30

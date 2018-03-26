@@ -7,6 +7,7 @@ public class OnLoad : MonoBehaviour {
     private RacingAI ai;
     private MLP_HoverMotor motor;
     public FollowCam followcam;
+    public Speedometer speedometer;
 
     // Use this for initialization
     void Start () {
@@ -38,6 +39,7 @@ public class OnLoad : MonoBehaviour {
                         ai.enabled = false;
                         motor.enabled = true;
                         followcam.target = g.transform;
+                        speedometer.car = g;
                     }
                 }
                 break;
@@ -60,6 +62,7 @@ public class OnLoad : MonoBehaviour {
                         ai.enabled = false;
                         motor.enabled = true;
                         followcam.target = g.transform;
+                        speedometer.car = g;
                     }
                 }
                 break;
@@ -82,6 +85,7 @@ public class OnLoad : MonoBehaviour {
                         ai.enabled = false;
                         motor.enabled = true;
                         followcam.target = g.transform;
+                        speedometer.car = g;
                     }
                 }
                 break;
@@ -104,6 +108,7 @@ public class OnLoad : MonoBehaviour {
                         ai.enabled = false;
                         motor.enabled = true;
                         followcam.target = g.transform;
+                        speedometer.car = g;
                     }
                 }
                 break;

@@ -7,6 +7,8 @@ public class RacingAI : MonoBehaviour {
     public Transform path;
     private List<Transform> nodes;
     private int currentNode = 0;
+    private Vector3 respawnPos;
+    private Quaternion respawnRotation;
     public float maxSteerAngle = 40f;
 
     //static input class attached to game object.
@@ -85,8 +87,10 @@ public class RacingAI : MonoBehaviour {
 
     void CheckWaypointDistance()
     {
-        //print(Vector3.Distance(transform.position, nodes[currentNode].position));
         if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 35.0f){
+            respawnPos = transform.position;
+            respawnRotation = transform.rotation;
+            //print(respawnPos);
             if(currentNode == (nodes.Count - 1))
             {
                 currentNode = 0;
@@ -98,9 +102,12 @@ public class RacingAI : MonoBehaviour {
                 //print("Node: "+currentNode);
             }
         }
-        else
+        else if(currentNode != 0 && Vector3.Distance(transform.position, nodes[currentNode -1].position) > 250.0f)
         {
-            //print(Vector3.Distance(transform.position, nodes[currentNode].position));
+            //print(Vector3.Distance(transform.position, nodes[currentNode - 1].position));
+            print("Out of bounds");
+            transform.position = respawnPos;
+            transform.rotation = respawnRotation;
         }
     }
 

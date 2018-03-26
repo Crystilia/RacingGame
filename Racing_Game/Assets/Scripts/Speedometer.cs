@@ -11,17 +11,17 @@ public class Speedometer : MonoBehaviour {
 	
 	void Start () {
 		Speeder = this;
-        car = GameObject.FindGameObjectWithTag("Vehicle");
+        //car = GameObject.FindGameObjectWithTag("Vehicle");
 	}
 
     private void Update()
     {
-        //ShowSpeed(car.GetComponent<Rigidbody>().velocity.magnitude, 0f, car.GetComponent<MLP_HoverMotor>().terminalVelocity);
+        ShowSpeed(car.GetComponent<Rigidbody>().velocity.magnitude, 0f, car.GetComponent<MLP_HoverMotor>().terminalVelocity);
     }
 
     public static void ShowSpeed(float speed, float min, float max)
 	{
 		float ang = Mathf.Lerp(minAngle, maxAngle, Mathf.InverseLerp(min, max, speed));
-		//Speeder.transform.eulerAngles = new Vector3(0,0,ang);
+		Speeder.transform.eulerAngles = new Vector3(0,0,ang);
 	}
 }

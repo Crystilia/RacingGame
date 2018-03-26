@@ -44,6 +44,14 @@ public class MLP_HoverMotor : MonoBehaviour {
 
     //set not ~Characters a "Characters" layer must exist. 
     int layerMask;
+
+    //Path vars
+    public Transform path;
+    private List<Transform> nodes;
+    private int currentNode = 0;
+    private Vector3 respawnPos;
+    private Quaternion respawnRotation;
+
     // Use this for initialization
     void Start () {
         //instantiate input
@@ -53,8 +61,21 @@ public class MLP_HoverMotor : MonoBehaviour {
         //set drag value
         drag = thrust / terminalVelocity;
 
+        //create layer from everything not in characters layer.
         layerMask = 1 << LayerMask.NameToLayer("Characters");
         layerMask = ~layerMask;
+
+        //initalize path
+        Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
+        nodes = new List<Transform>();
+
+        for (int i = 0; i < pathTransforms.Length; i++)
+        {
+            if (pathTransforms[i] != path.transform)
+            {
+                nodes.Add(pathTransforms[i]);
+            }
+        }
     }
 
     //for debuging in scene view
@@ -109,6 +130,39 @@ public class MLP_HoverMotor : MonoBehaviour {
         Speedometer.ShowSpeed(rb.velocity.magnitude, 0, 100);
         DoHover();
         Drive();
+        CheckWaypointDistance();
+    }
+
+    void CheckWaypointDistance()
+    {
+        //if(Vector3.Distance(transform.position, nodes[currentNode].position) <= 30.0f)
+        //{
+        //    respawnPos = transform.position;
+        //    respawnRotation = transform.rotation;
+        //    print(respawnPos);
+        //}
+
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 35.0f)
+        {
+            if(currentNode == (nodes.Count - 1))
+            {
+                currentNode = 0;
+            }
+            else
+            {
+                currentNode++;
+                respawnPos = transform.position;
+                respawnRotation = transform.rotation;
+                print(respawnPos);
+            }
+        }
+        else if(currentNode != 0 && Vector3.Distance(transform.position, nodes[currentNode -1].position) > 250.0f)
+        {
+            //print(Vector3.Distance(transform.position, nodes[currentNode - 1].position));
+            print("Out of bounds");
+            transform.position = respawnPos;
+            transform.rotation = respawnRotation;
+        }
     }
 
     void Drive()
