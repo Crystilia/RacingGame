@@ -2624,7 +2624,7 @@ Prefab:
     - target: {fileID: 114951516893704154, guid: 9081a1af929ee6541a0eb6f35a091cc0,
         type: 2}
       propertyPath: thrust
-      value: 50
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 114951516893704154, guid: 9081a1af929ee6541a0eb6f35a091cc0,
         type: 2}
