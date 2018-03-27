@@ -26,6 +26,7 @@ public class OnLoad : MonoBehaviour {
                 {
                     if (!g.name.Equals("truckFinal"))
                     {
+                        g.tag = "AI";
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = true;
@@ -34,6 +35,7 @@ public class OnLoad : MonoBehaviour {
                     }
                     else
                     {
+                        g.tag = "Player";
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = false;
@@ -49,6 +51,7 @@ public class OnLoad : MonoBehaviour {
                 {
                     if (!g.name.Equals("sportFinal"))
                     {
+                        g.tag = "AI";
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = true;
@@ -57,6 +60,7 @@ public class OnLoad : MonoBehaviour {
                     }
                     else
                     {
+                        g.tag = "Player";
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = false;
@@ -72,6 +76,8 @@ public class OnLoad : MonoBehaviour {
                 {
                     if (!g.name.Equals("limoFinal"))
                     {
+
+                        g.tag = "AI";
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = true;
@@ -80,6 +86,7 @@ public class OnLoad : MonoBehaviour {
                     }
                     else
                     {
+                        g.tag = "Player";
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = false;
@@ -95,6 +102,7 @@ public class OnLoad : MonoBehaviour {
                 {
                     if (!g.name.Equals("muscleFinal"))
                     {
+                        g.tag = "AI";
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = true;
@@ -103,6 +111,7 @@ public class OnLoad : MonoBehaviour {
                     }
                     else
                     {
+                        g.tag = "Player";
                         ai = g.GetComponent<RacingAI>();
                         motor = g.GetComponent<MLP_HoverMotor>();
                         ai.enabled = false;

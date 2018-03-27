@@ -108,7 +108,6 @@ public class RacingAI : MonoBehaviour {
         if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 30.0f){
             respawnPos = transform.position;
             respawnRotation = transform.rotation;
-            //print(respawnPos);
             if(currentNode == (nodes.Count - 1))
             {
                 currentNode = 0;
@@ -116,7 +115,6 @@ public class RacingAI : MonoBehaviour {
             else
             {
                 currentNode++;
-                //print("Node: "+currentNode);
             }
         }
 
@@ -132,12 +130,7 @@ public class RacingAI : MonoBehaviour {
         {
             transform.position = respawnPos;
             transform.rotation = respawnRotation;
-        }
-
-        if(rb.velocity.magnitude >= 0f)
-        {
-            print(rb.velocity.magnitude);
-        }    
+        } 
     }
 
     void DoHover()

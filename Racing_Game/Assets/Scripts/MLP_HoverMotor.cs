@@ -123,20 +123,10 @@ public class MLP_HoverMotor : MonoBehaviour {
             Gizmos.DrawLine(transform.position, hit.point);
             Gizmos.DrawSphere(hit.point, 0.25f);
         }
-        else
-        {
-
-        }
     }
-
-    // Update is called once per frame
-    void Update () {
-        //print(Vector3.Dot(transform.up, Vector3.right));
-	}
 
     private void FixedUpdate()
     {
-        //print(Vector3.Dot(transform.up, Vector3.down));
         speed = Vector3.Dot(rb.velocity, transform.forward);
         if (start)
         {
@@ -145,10 +135,6 @@ public class MLP_HoverMotor : MonoBehaviour {
             Drive();
             CheckWaypointDistance();
         }
-        //Speedometer.ShowSpeed(rb.velocity.magnitude, 0, 100);
-        //DoHover();
-        //Drive();
-        //CheckWaypointDistance();
     }
 
     IEnumerator DoCountdown()
@@ -159,12 +145,6 @@ public class MLP_HoverMotor : MonoBehaviour {
 
     void CheckWaypointDistance()
     {
-        //if(Vector3.Distance(transform.position, nodes[currentNode].position) <= 30.0f)
-        //{
-        //    respawnPos = transform.position;
-        //    respawnRotation = transform.rotation;
-        //    print(respawnPos);
-        //}
         float fallingDis = Mathf.Abs(nodes[currentNode].position.y - transform.position.y);
         if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 30.0f)
         {
@@ -177,7 +157,6 @@ public class MLP_HoverMotor : MonoBehaviour {
                 currentNode++;
                 respawnPos = transform.position;
                 respawnRotation = transform.rotation;
-                //print(respawnPos);
             }
         }
         
@@ -199,44 +178,33 @@ public class MLP_HoverMotor : MonoBehaviour {
     void Drive()
     {
         //turning
-        //float rotoTorque = input.TurnInput - rb.angularVelocity.y;
-        //float rotoTorque = input.TurnInput;
         if (Vector3.Dot(transform.up, Vector3.down) < -0.3f)
         {
-            rb.AddTorque(transform.up * (input.TurnInput - rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
-            
+            rb.AddTorque(transform.up * (input.TurnInput - rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);    
         }
-
         else if(Vector3.Dot(transform.up, Vector3.down)  >= -0.3f && Vector3.Dot(transform.up, Vector3.down) <= 0.3f)
         {
             rb.AddTorque(transform.up * (input.TurnInput + rb.angularVelocity.y), ForceMode.Acceleration);
         }
-
         else if( Vector3.Dot(transform.up, Vector3.down) > 0.3f)
         {
             rb.AddTorque(transform.up * (input.TurnInput + rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
         }
-
         if (input.TurnInput == 0f)
             rb.angularVelocity *= VelocitySlowingFactor;
         if (input.thrustInput <= 0f)
             rb.velocity *= VelocitySlowingFactor;
         if (!grounded)
             return;
-
         if (input.isBraking)
         {
             rb.velocity *= velocityBrakingFactor;
         }
-
         if(speed >= 1 && grounded && !itsPlaying)
-        {
-            
+        {           
             source.Play();
-            itsPlaying = true;
-           
+            itsPlaying = true;           
         }
-
         if (speed <= 1 && itsPlaying)
         {
             source.Stop();

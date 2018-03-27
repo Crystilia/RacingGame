@@ -8,6 +8,7 @@ TagManager:
   - LapTrigger
   - checkTrigger
   - Vehicle
+  - AI
   layers:
   - Default
   - TransparentFX
