@@ -77,7 +77,6 @@ public class RacingAI : MonoBehaviour {
                 nodes.Add(pathTransforms[i]);
             }
         }
-
         StartCoroutine(DoCountdown());
     }
 
@@ -93,11 +92,7 @@ public class RacingAI : MonoBehaviour {
         {
             DoHover();
             Drive();
-            //CheckWaypointDistance();
         }
-        //DoHover();
-        //Drive();
-        //CheckWaypointDistance();
     }
 
     IEnumerator DoCountdown()
@@ -108,6 +103,8 @@ public class RacingAI : MonoBehaviour {
 
     void CheckWaypointDistance()
     {
+        print(Vector3.Dot(transform.up, Vector3.down));
+        float fallingDis = Mathf.Abs(nodes[currentNode].position.y - transform.position.y);
         if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 30.0f){
             respawnPos = transform.position;
             respawnRotation = transform.rotation;
@@ -118,18 +115,24 @@ public class RacingAI : MonoBehaviour {
             }
             else
             {
-                //print("Node: "+currentNode);
                 currentNode++;
                 //print("Node: "+currentNode);
             }
         }
-        //else if(currentNode != 0 && Vector3.Distance(transform.position, nodes[currentNode].position) > 250.0f)
-        //{
-        //    //print(Vector3.Distance(transform.position, nodes[currentNode - 1].position));
-        //    print("Out of bounds");
-        //    transform.position = respawnPos;
-        //    transform.rotation = respawnRotation;
-        //}
+
+        //falling
+        if(fallingDis > 50f)
+        {
+            transform.position = respawnPos;
+            transform.rotation = respawnRotation;
+        }
+
+        //upside down
+        else if(Vector3.Dot(transform.up, Vector3.down) > .75f && !grounded)
+        {
+            transform.position = respawnPos;
+            transform.rotation = respawnRotation;
+        }
     }
 
     void DoHover()

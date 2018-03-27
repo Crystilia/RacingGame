@@ -136,7 +136,7 @@ public class MLP_HoverMotor : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        print(Vector3.Dot(transform.up, Vector3.down));
+        //print(Vector3.Dot(transform.up, Vector3.down));
         speed = Vector3.Dot(rb.velocity, transform.forward);
         if (start)
         {
@@ -165,8 +165,8 @@ public class MLP_HoverMotor : MonoBehaviour {
         //    respawnRotation = transform.rotation;
         //    print(respawnPos);
         //}
-
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 35.0f)
+        float fallingDis = Mathf.Abs(nodes[currentNode].position.y - transform.position.y);
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 30.0f)
         {
             if(currentNode == (nodes.Count - 1))
             {
@@ -180,10 +180,17 @@ public class MLP_HoverMotor : MonoBehaviour {
                 //print(respawnPos);
             }
         }
-        else if(currentNode != 0 && Vector3.Distance(transform.position, nodes[currentNode -1].position) > 250.0f)
+        
+        //falling
+        if (fallingDis > 50f)
         {
-            //print(Vector3.Distance(transform.position, nodes[currentNode - 1].position));
-            print("Out of bounds");
+            transform.position = respawnPos;
+            transform.rotation = respawnRotation;
+        }
+
+        //upside down
+        else if (Vector3.Dot(transform.up, Vector3.down) > .75f && !grounded)
+        {
             transform.position = respawnPos;
             transform.rotation = respawnRotation;
         }
