@@ -131,11 +131,12 @@ public class MLP_HoverMotor : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        //print(Vector3.Dot(transform.up, Vector3.right));
 	}
 
     private void FixedUpdate()
     {
+        print(Vector3.Dot(transform.up, Vector3.down));
         speed = Vector3.Dot(rb.velocity, transform.forward);
         if (start)
         {
@@ -176,7 +177,7 @@ public class MLP_HoverMotor : MonoBehaviour {
                 currentNode++;
                 respawnPos = transform.position;
                 respawnRotation = transform.rotation;
-                print(respawnPos);
+                //print(respawnPos);
             }
         }
         else if(currentNode != 0 && Vector3.Distance(transform.position, nodes[currentNode -1].position) > 250.0f)
@@ -192,32 +193,30 @@ public class MLP_HoverMotor : MonoBehaviour {
     {
         //turning
         //float rotoTorque = input.TurnInput - rb.angularVelocity.y;
-        float rotoTorque = input.TurnInput;
-        //rb.AddTorque(transform.up * rotoTorque * turnForce, ForceMode.Acceleration);
-        //print(rb.angularVelocity.y);
-        if ( Vector3.Dot(transform.up, Vector3.down) < 0.5f || Vector3.Dot(transform.up, Vector3.down) < -0.5f)
+        //float rotoTorque = input.TurnInput;
+        if (Vector3.Dot(transform.up, Vector3.down) < -0.3f)
         {
-            rb.AddTorque(transform.up * (rotoTorque - rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
+            rb.AddTorque(transform.up * (input.TurnInput - rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
             
         }
-        else if( Vector3.Dot(transform.up, Vector3.down) >= 0.5f || Vector3.Dot(transform.up, Vector3.down) >= -0.5f)
+
+        else if(Vector3.Dot(transform.up, Vector3.down)  >= -0.3f && Vector3.Dot(transform.up, Vector3.down) <= 0.3f)
         {
-            rb.AddTorque(transform.up * (rotoTorque + rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
+            rb.AddTorque(transform.up * (input.TurnInput + rb.angularVelocity.y), ForceMode.Acceleration);
         }
-        //if (input.TurnInput == 0 && Vector3.Dot(transform.up, Vector3.down) >= 0.5f || Vector3.Dot(transform.up, Vector3.down) >= -0.5f)
-        //{
-        //    rb.constraints = RigidbodyConstraints.FreezeRotationY;
-        //}
-        //else
-        //{
-        //    rb.constraints = RigidbodyConstraints.None;
-        //}
+
+        else if( Vector3.Dot(transform.up, Vector3.down) > 0.3f)
+        {
+            rb.AddTorque(transform.up * (input.TurnInput + rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
+        }
+
         if (input.TurnInput == 0f)
             rb.angularVelocity *= VelocitySlowingFactor;
         if (input.thrustInput <= 0f)
             rb.velocity *= VelocitySlowingFactor;
         if (!grounded)
             return;
+
         if (input.isBraking)
         {
             rb.velocity *= velocityBrakingFactor;
@@ -236,8 +235,6 @@ public class MLP_HoverMotor : MonoBehaviour {
             source.Stop();
             itsPlaying = false;
         }
-
- 
 
         //forward
         float sideSpeed = Vector3.Dot(rb.velocity, transform.right);
@@ -284,7 +281,7 @@ public class MLP_HoverMotor : MonoBehaviour {
         {
             gravity = -Vector3.up * fallGrav;//create gravity
             rb.AddForce(gravity, ForceMode.Acceleration);//apply gravity
-            //rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 10f));//Stabalize
+            rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 10f));//Stabalize
         }
     }
 

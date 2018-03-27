@@ -37,7 +37,7 @@ public class AIpath : MonoBehaviour {
             }
 
             Gizmos.DrawLine(previousNode, currentNode);
-            Gizmos.DrawWireSphere(currentNode, 35f);
+            Gizmos.DrawWireSphere(currentNode, 20f);
         }
     }
 }

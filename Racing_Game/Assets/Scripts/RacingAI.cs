@@ -81,6 +81,11 @@ public class RacingAI : MonoBehaviour {
         StartCoroutine(DoCountdown());
     }
 
+    private void Update()
+    {
+        CheckWaypointDistance();
+    }
+
     private void FixedUpdate()
     {
         speed = Vector3.Dot(rb.velocity, transform.forward);
@@ -88,7 +93,7 @@ public class RacingAI : MonoBehaviour {
         {
             DoHover();
             Drive();
-            CheckWaypointDistance();
+            //CheckWaypointDistance();
         }
         //DoHover();
         //Drive();
@@ -103,7 +108,7 @@ public class RacingAI : MonoBehaviour {
 
     void CheckWaypointDistance()
     {
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 35.0f){
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 30.0f){
             respawnPos = transform.position;
             respawnRotation = transform.rotation;
             //print(respawnPos);
@@ -118,13 +123,13 @@ public class RacingAI : MonoBehaviour {
                 //print("Node: "+currentNode);
             }
         }
-        else if(currentNode != 0 && Vector3.Distance(transform.position, nodes[currentNode -1].position) > 250.0f)
-        {
-            //print(Vector3.Distance(transform.position, nodes[currentNode - 1].position));
-            print("Out of bounds");
-            transform.position = respawnPos;
-            transform.rotation = respawnRotation;
-        }
+        //else if(currentNode != 0 && Vector3.Distance(transform.position, nodes[currentNode].position) > 250.0f)
+        //{
+        //    //print(Vector3.Distance(transform.position, nodes[currentNode - 1].position));
+        //    print("Out of bounds");
+        //    transform.position = respawnPos;
+        //    transform.rotation = respawnRotation;
+        //}
     }
 
     void DoHover()
