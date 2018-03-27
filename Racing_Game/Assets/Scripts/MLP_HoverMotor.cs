@@ -184,8 +184,8 @@ public class MLP_HoverMotor : MonoBehaviour {
         //falling
         if (fallingDis > 50f)
         {
-            transform.position = respawnPos;
-            transform.rotation = respawnRotation;
+            transform.position = nodes[currentNode].position;
+            transform.rotation = Quaternion.identity;
         }
 
         //upside down
@@ -288,7 +288,7 @@ public class MLP_HoverMotor : MonoBehaviour {
         {
             gravity = -Vector3.up * fallGrav;//create gravity
             rb.AddForce(gravity, ForceMode.Acceleration);//apply gravity
-            rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 10f));//Stabalize
+            //rb.MoveRotation(Quaternion.Lerp(rb.rotation, rotation, Time.deltaTime * 10f));//Stabalize
         }
     }
 

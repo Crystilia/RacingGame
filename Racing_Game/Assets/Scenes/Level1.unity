@@ -7164,7 +7164,7 @@ Prefab:
     - target: {fileID: 114228990909213626, guid: 2ef155cd5f8217e4297296bb91a92831,
         type: 2}
       propertyPath: pid.result
-      value: 0
+      value: 0.81467134
       objectReference: {fileID: 0}
     - target: {fileID: 114228990909213626, guid: 2ef155cd5f8217e4297296bb91a92831,
         type: 2}
@@ -7179,7 +7179,7 @@ Prefab:
     - target: {fileID: 114228990909213626, guid: 2ef155cd5f8217e4297296bb91a92831,
         type: 2}
       propertyPath: fallGrav
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1188528502935776, guid: 2ef155cd5f8217e4297296bb91a92831, type: 2}
       propertyPath: m_Layer
@@ -12086,7 +12086,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2123916802
+  randomSeed: -1901611206
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -19715,7 +19715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2023295438
 Transform:
   m_ObjectHideFlags: 0

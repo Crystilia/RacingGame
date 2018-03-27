@@ -128,11 +128,16 @@ public class RacingAI : MonoBehaviour {
         }
 
         //upside down
-        else if(Vector3.Dot(transform.up, Vector3.down) > .75f && !grounded)
+        if(Vector3.Dot(transform.up, Vector3.down) > .75f && !grounded)
         {
             transform.position = respawnPos;
             transform.rotation = respawnRotation;
         }
+
+        if(rb.velocity.magnitude >= 0f)
+        {
+            print(rb.velocity.magnitude);
+        }    
     }
 
     void DoHover()
@@ -178,43 +183,34 @@ public class RacingAI : MonoBehaviour {
     {
         Vector3 steeringVector = transform.InverseTransformPoint(nodes[currentNode].position);
         float newSteer = steeringVector.x / steeringVector.magnitude * 2f;
-        //print(newSteer);
         return newSteer;
     }
 
     void Drive()
     {
         //turning
-        //float rotoTorque = input.TurnInput - rb.angularVelocity.y;
         float rotoTorque = CalcSteer();
-        //rb.AddTorque(transform.up * rotoTorque * turnForce, ForceMode.Acceleration);
-        //print(rb.angularVelocity.y);
-        if (Vector3.Dot(transform.up, Vector3.down) < 0.5f || Vector3.Dot(transform.up, Vector3.down) < -0.5f)
+        if (Vector3.Dot(transform.up, Vector3.down) < -0.3f)
         {
             rb.AddTorque(transform.up * (rotoTorque - rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
+
         }
-        else if (Vector3.Dot(transform.up, Vector3.down) >= 0.5f || Vector3.Dot(transform.up, Vector3.down) >= -0.5f)
+
+        else if (Vector3.Dot(transform.up, Vector3.down) >= -0.3f && Vector3.Dot(transform.up, Vector3.down) <= 0.3f)
+        {
+            rb.AddTorque(transform.up * (rotoTorque + rb.angularVelocity.y), ForceMode.Acceleration);
+        }
+
+        else if (Vector3.Dot(transform.up, Vector3.down) > 0.3f)
         {
             rb.AddTorque(transform.up * (rotoTorque + rb.angularVelocity.y) * turnForce, ForceMode.Acceleration);
         }
-        //if (input.TurnInput == 0 && Vector3.Dot(transform.up, Vector3.down) >= 0.5f || Vector3.Dot(transform.up, Vector3.down) >= -0.5f)
-        //{
-        //    rb.constraints = RigidbodyConstraints.FreezeRotationY;
-        //}
-        //else
-        //{
-        //    rb.constraints = RigidbodyConstraints.None;
-        //}
         if (CalcSteer() == 0f)
             rb.angularVelocity *= VelocitySlowingFactor;
         if (CalcSteer() <= 0f)
             rb.velocity *= VelocitySlowingFactor;
         if (!grounded)
             return;
-        //if (input.isBraking)
-        //{
-        //    rb.velocity *= velocityBrakingFactor;
-        //}
 
         //forward
         float sideSpeed = Vector3.Dot(rb.velocity, transform.right);
